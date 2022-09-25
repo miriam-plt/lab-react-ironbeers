@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { BrowserRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
 
 function Beers() {
   const [beers, setBeers] = useState([]);
@@ -10,7 +10,7 @@ function Beers() {
     axios.get(`${API_URL}/`)
          .then(response => setBeers(response.data))
          .catch(err => console.log(err))
-  }, []);
+  });
 
   if(beers.length === 0){
     return <>
