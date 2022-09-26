@@ -17,9 +17,9 @@ function NewBeer() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const newBeer = { name: name, tagline: tagline, description: description, firstBrewed: firstBrewed, brewersTips: brewersTips, attenuation: attenuation, contributedBy: contributedBy }
+        const newBeer = { name: name, tagline: tagline, description: description, first_brewed: firstBrewed, brewers_tips: brewersTips, attenuation_level: attenuation, contributed_by: contributedBy }
         // axios POST request with the form data
-        axios.post(`${API_URL}/`, newBeer)
+        axios.post(`${API_URL}/new`, newBeer)
              .then(response => navigate('/beers'))
              .catch(err => console.log(err));
     }
